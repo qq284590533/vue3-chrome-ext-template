@@ -11,4 +11,11 @@ const count = ref(0)
   <button type="button" @click="count++">count is {{ count }}</button>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+button {
+  border: 1px;
+  background: gray;
+  padding: 5px;
+  border-radius: 5px;
+}
+</style>

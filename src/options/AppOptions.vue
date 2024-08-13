@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HelloWorld from '@/components/HelloWorld.vue'
+</script>
 <template>
-  <div>Options</div>
+  <div>
+    <HelloWorld msg="Hello popup" />
+  </div>
 </template>
