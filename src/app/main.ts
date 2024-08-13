@@ -1,10 +1,12 @@
 import { createApp } from 'vue'
-import App from '../app/index.vue'
+import App from './index.vue'
 import '../styles/tailwind.css'
+import '../styles/style.css'
 
 function createExtContainer() {
   const container = document.createElement('div')
-  document.body.append(container)
+  document.body.parentNode!.appendChild(container)
+
   return container
 }
 

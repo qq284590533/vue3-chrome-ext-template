@@ -10,7 +10,7 @@ const outputPath = r(`output/${IS_DEV ? 'dev' : 'prod'}`)
 function getManifest(): Manifest.WebExtensionManifest {
   const manifest: Manifest.WebExtensionManifest = {
     manifest_version: 3,
-    name: pkg.name + `${IS_DEV ? '_dev' : ''}`,
+    name: pkg.name + `${IS_DEV ? '-dev' : ''}`,
     version: pkg.version,
     description: pkg.description,
     action: {

@@ -1,13 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HelloWorld from '../components/HelloWorld.vue'
+</script>
 <template>
-  <div
-    class="flex w-[100%] top-0 left-0 bg-blue-400 px-10 py-5 align-middle justify-center"
-  >
-    <span class="text">hello ext1111</span>
+  <div class="fixed right-7 bottom-8 z-50 p-10 bg-gray-300 rounded-md">
+    <HelloWorld msg="Hello Extension!" />
   </div>
 </template>
-<style lang="scss" scoped>
-.text {
-  color: rgb(0, 255, 191);
-}
-</style>
+<style lang="scss" scoped></style>
