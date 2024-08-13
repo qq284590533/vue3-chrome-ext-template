@@ -3,6 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "description": "A chrome extension template",
+  "keywords": [
+    "vue3",
+    "ts",
+    "vite",
+    "chrome",
+    "extension",
+    "template"
+  ],
   "scripts": {
     "dev": "rimraf output/dev && run-p dev:web build:dev dev:js",
     "dev:web": "vite",
