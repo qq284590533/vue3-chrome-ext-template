@@ -1,2 +1,6 @@
-<script setup lang="ts"></script>
-<template>Popup</template>
+<script setup lang="ts">
+import HelloWorld from '@/components/HelloWorld.vue'
+</script>
+<template>
+  <HelloWorld msg="Hello popup" />
+</template>

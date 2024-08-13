@@ -7,12 +7,13 @@ const r = (...path: string[]) => resolve(__dirname, ...path)
 const { host, port } = SERVE_CONFIG
 
 export default defineConfig(() => {
-  console.log('process.env', process.env.PORT)
+  const isDev = process.env.NODE_ENV !== 'production'
   return {
     root: r('src'),
+    base: isDev ? `http://${host}:${port}` : undefined,
     resolve: {
       alias: {
-        '@/': r('src/')
+        '@/': `${r('src')}/`
       }
     },
     server: {
@@ -30,7 +31,6 @@ export default defineConfig(() => {
         },
         output: {
           entryFileNames: (chunk) => {
-            console.log(chunk)
             if (chunk.name === 'app') {
               return 'app/main.js'
             } else {
