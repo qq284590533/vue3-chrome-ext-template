@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+import srcReplace from './plugins/vite-plugin-content-replace'
 import SERVE_CONFIG from './serve.config'
 
 const r = (...path: string[]) => resolve(__dirname, ...path)
@@ -8,6 +9,20 @@ const { host, port } = SERVE_CONFIG
 
 export default defineConfig(() => {
   const isDev = process.env.NODE_ENV !== 'production'
+  const plugins = [vue()]
+
+  // 开发环境替换组件中的资源文件路径
+  if (isDev) {
+    plugins.push(
+      srcReplace({
+        match: /@\/assets\//,
+        global: true,
+        replacement: `http://${host}:${port}/assets/`,
+        include: [/\.vue$/]
+      })
+    )
+  }
+
   return {
     root: r('src'),
     base: isDev ? `http://${host}:${port}` : undefined,
@@ -47,6 +62,6 @@ export default defineConfig(() => {
         }
       }
     },
-    plugins: [vue()]
+    plugins
   }
 })
