@@ -15,8 +15,7 @@ export default defineConfig(() => {
   if (isDev) {
     plugins.push(
       srcReplace({
-        match: /@\/assets\//,
-        global: true,
+        match: /@\/assets\//g,
         replacement: `http://${host}:${port}/assets/`,
         include: [/\.vue$/]
       })
