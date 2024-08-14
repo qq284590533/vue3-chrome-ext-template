@@ -30,13 +30,13 @@ function getManifest(): Manifest.WebExtensionManifest {
       {
         matches: ['http://*/*', 'https://*/*'],
         js: ['./content/index.global.js'],
-        css: IS_DEV ? [] : ['./assets/app.css', './assets/tailwind.css'],
+        css: IS_DEV ? [] : ['./assets/inject.css', './assets/tailwind.css'],
         run_at: 'document_start'
       }
     ],
     web_accessible_resources: [
       {
-        resources: ['/app/main.js', '/assets/*'],
+        resources: ['/inject/main.js', '/assets/*'],
         matches: ['http://*/*', 'https://*/*']
       }
     ],

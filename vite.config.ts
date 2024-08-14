@@ -27,12 +27,12 @@ export default defineConfig(() => {
         input: {
           options: r('src/options/index.html'),
           popup: r('src/popup/index.html'),
-          app: r('src/app/main.ts')
+          inject: r('src/inject/main.ts')
         },
         output: {
           entryFileNames: (chunk) => {
-            if (chunk.name === 'app') {
-              return 'app/main.js'
+            if (chunk.name === 'inject') {
+              return 'inject/main.js'
             } else {
               return '[name]/[name]-[hash].js'
             }

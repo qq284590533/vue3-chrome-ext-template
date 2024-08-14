@@ -11,8 +11,8 @@ class Content {
     // script.type = 'text/javascript'
     script.setAttribute('type', 'module')
     script.src = IS_DEV
-      ? `http://${host}:${port}/app/main.ts`
-      : chrome.runtime.getURL('app/main.js')
+      ? `http://${host}:${port}/inject/main.ts`
+      : chrome.runtime.getURL('inject/main.js')
     // script.onload = () => {
     //   document.body.removeChild(script)
     // }
