@@ -16,7 +16,7 @@
     "dev:web": "vite",
     "dev:js": "npm run build:dev_web -- --watch src",
     "build:dev_web": "tsx --env-file=.env.development scripts/build-dev-web.ts",
-    "build": "run-s clear build:web build:prod",
+    "build": "run-s clear build:prod build:web",
     "build:web": "vue-tsc -b && vite build",
     "build:dev": "tsup --env.NODE_ENV development",
     "build:prod": "tsup --env.NODE_ENV production",
