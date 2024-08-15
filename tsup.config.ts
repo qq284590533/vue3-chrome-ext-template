@@ -11,7 +11,9 @@ export default defineConfig((options) => {
     splitting: false,
     minify: false,
     format: 'iife',
-    watch: isDev ? ['src/background', 'src/content', 'src/assets/icon'] : false,
+    watch: isDev
+      ? ['src/background', 'src/content', 'src/assets/icon', 'src/manifest.ts']
+      : false,
     onSuccess: async () => {
       const configFile = isDev ? '.env.development' : '.env.production'
       execSync(`tsx --env-file=${configFile} ./scripts/move-files.ts `, {

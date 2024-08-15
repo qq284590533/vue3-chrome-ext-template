@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
+
+import { r } from './src/utils'
 import srcReplace from './plugins/vite-plugin-content-replace'
 import SERVE_CONFIG from './serve.config'
 
-const r = (...path: string[]) => resolve(__dirname, ...path)
 const { host, port } = SERVE_CONFIG
 
 export default defineConfig(() => {
